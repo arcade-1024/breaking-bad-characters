@@ -69,7 +69,7 @@ const CharacterPage = ({
 							</span>
 						</p>
 						{characterData[charId].nickname ? (
-							<p className="lg:mt-3">
+							<p className="char-info-alias flex items-center lg:mt-3 mt-2">
 								Alias -
 								<span className="ml-2 font-medium">
 									{characterData[charId].nickname}
