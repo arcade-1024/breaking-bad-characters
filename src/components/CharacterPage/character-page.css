@@ -1,0 +1,30 @@
+.char-img {
+	height: 250px;
+	width: 250px;
+	object-fit: cover;
+}
+.character-container {
+	background: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 500px) {
+	.char-img {
+		height: 200px;
+		width: 200px;
+		object-fit: cover;
+	}
+	.char-info-img-row {
+		flex-direction: column-reverse;
+	}
+	.char-info-portrayed {
+		font-size: 2.2rem;
+	}
+	.char-info-name {
+		justify-content: center;
+	}
+	.char-info-appear,
+	.char-info-occpation,
+	.char-info-qoute {
+		padding: 0 20px;
+		margin-top: 15px;
+	}
+}
