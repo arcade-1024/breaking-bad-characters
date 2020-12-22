@@ -99,7 +99,7 @@ const CharacterPage = ({
 					<h1 className="font-semibold text-lg">Occupation</h1>
 					<div className="flex flex-row flex-wrap">
 						{characterData[charId].occupation.map((job: any) => (
-							<p className="mx-2 my-2" key={`${job}`}>
+							<p className="mx-2 my-2 text-sm" key={`${job}`}>
 								{job}
 							</p>
 						))}
@@ -118,16 +118,21 @@ const CharacterPage = ({
 						<>
 							<ul className="mb-3">
 								{currentQuote.map((qoute: any) => (
-									<li className="italic my-2">"{qoute.quote}"</li>
+									<li className="italic my-2 text-sm font-medium">
+										<span className="font-extrabold">" </span> {qoute.quote}
+										<span className="font-extrabold"> "</span>
+									</li>
 								))}
 							</ul>
-							<Pagenation
-								postPerPage={quoteOnPage}
-								totalPost={qoutes.length}
-								changePage={changePageHandler}
-								classes={"h-7 w-7 mx-2 "}
-								type={"dots"}
-							/>
+							<div className="pt-5">
+								<Pagenation
+									postPerPage={quoteOnPage}
+									totalPost={qoutes.length}
+									changePage={changePageHandler}
+									classes={"h-7 w-7 mx-2 "}
+									type={"dots"}
+								/>
+							</div>
 						</>
 					)}
 				</div>
