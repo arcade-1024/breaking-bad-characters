@@ -50,7 +50,7 @@ const CharacterPage = ({
 	};
 	return (
 		<div className="character-container h-screen w-screen absolute z-50 lg:px-32 lg:py-5 ">
-			<div className="w-full h-full relative lg:px-20 bg-white py-5 lg:rounded-lg shadow-2xl">
+			<div className="w-full h-full relative lg:px-20 bg-white py-5 lg:rounded-lg shadow-2xl overflow-scroll character-main">
 				<button
 					className="absolute top-5  right-5 h-10 w-10 flex flex-row  justify-center items-center shadow-lg rounded-full focus:outline-none bg-yellow-400 hover:bg-yellow-300 duration-300"
 					onClick={() => closeModal()}
@@ -99,7 +99,7 @@ const CharacterPage = ({
 					<h1 className="font-semibold text-lg">Occupation</h1>
 					<div className="flex flex-row flex-wrap">
 						{characterData[charId].occupation.map((job: any) => (
-							<p className="mx-2 my-2 text-sm" key={`${job}`}>
+							<p className="mx-2 my-1 text-sm" key={`${job}`}>
 								{job}
 							</p>
 						))}
