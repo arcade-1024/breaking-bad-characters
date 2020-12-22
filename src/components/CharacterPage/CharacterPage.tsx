@@ -17,7 +17,6 @@ const CharacterPage = ({
 }: CharacterPageComponent) => {
 	const [qoutes, setQoutes] = useState([]);
 	const [loading, setLoading] = useState(true);
-	// eslint-disable-next-line
 	const [currentPage, setCurrentPage] = useState(1);
 	//eslint-disable-next-line
 	const [quoteOnPage, setQuoteOnPage] = useState(3);

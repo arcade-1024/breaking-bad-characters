@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import CharacterPage from "../CharacterPage/CharacterPage";
+import React from "react";
 import "./character-card.css";
 export interface CharacterCardComponent {
 	name: String;
@@ -9,12 +8,11 @@ export interface CharacterCardComponent {
 	actorName: String;
 	nickName: String;
 	status: String;
-	OtherData: any;
+	OtherData?: any;
 	id: number;
 	showCharInfo: Function;
 }
 const CharacterCard = ({
-	OtherData,
 	charImg,
 	dateOfBirth,
 	name,
