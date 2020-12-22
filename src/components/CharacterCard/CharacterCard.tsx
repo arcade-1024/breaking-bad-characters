@@ -29,11 +29,11 @@ const CharacterCard = ({
 		<>
 			<div className="card ">
 				<div className="card-inner">
-					<div className="card-front rounded-lg shadow-md  overflow-hidden flex flex-col ">
+					<div className="card-front rounded-lg shadow-md  overflow-hidden flex flex-col bg-white">
 						<div className="w-100">
 							<img className="w-100" src={charImg} alt="" />
 						</div>
-						<h1 className="lg:text-xl pt-2 font-semibold tracking-wide text-center">
+						<h1 className="character-name lg:text-xl pt-2 font-semibold tracking-wide text-center">
 							{name}
 						</h1>
 					</div>
@@ -61,7 +61,7 @@ const CharacterCard = ({
 							</li>
 						</ul>
 						<button
-							className="absolute bottom-5 text-white border-white border-2 px-7 py-2 hover:bg-white hover:font-bold hover:text-black duration-300 rounded-md focus:outline-none"
+							className="absolute bottom-5 text-white border-white border-2 px-7 py-2 hover:bg-yellow-400 hover:border-yellow-600 hover:font-bold hover:text-black duration-300 rounded-md focus:outline-none"
 							onClick={() => showCharInfo(id)}
 						>
 							Read More

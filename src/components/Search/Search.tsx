@@ -21,20 +21,20 @@ const Search = ({ searchCharacter }: SearchComponent) => {
 	};
 	return (
 		<section className="flex flex-row justify-center">
-			<form className="w-2/4 relative">
+			<form className="search-form w-2/4 relative">
 				<input
 					type="text"
-					className="h-10 w-full focus:outline-none border-2 border-gray-200 focus:border-gray-400 duration-75 px-3 my-5 rounded-lg"
+					className="h-12 w-full focus:outline-none border-2 border-yellow-500 focus:border-yellow-600 duration-75 px-3 my-5 rounded-lg text-xl"
 					placeholder="Search Characters"
 					ref={inputRef}
 					onChange={onChangeHandler}
 				/>
 				<div className="absolute top-1/2 right-2 input-icon">
 					{icon ? (
-						<FiSearch />
+						<FiSearch stroke={"#999"} />
 					) : (
 						<button onClick={clearInput}>
-							<FiX />
+							<FiX stroke={"#999"} />
 						</button>
 					)}
 				</div>

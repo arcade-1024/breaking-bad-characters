@@ -50,9 +50,9 @@ const CharacterPage = ({
 	};
 	return (
 		<div className="character-container h-screen w-screen absolute z-50 lg:px-32 lg:py-5 ">
-			<div className="w-full h-full relative lg:px-20 bg-white py-5 lg:rounded-lg shadow-lg">
+			<div className="w-full h-full relative lg:px-20 bg-white py-5 lg:rounded-lg shadow-2xl">
 				<button
-					className="absolute top-5  right-5 h-10 w-10 flex flex-row  justify-center items-center shadow-lg rounded-full focus:outline-none"
+					className="absolute top-5  right-5 h-10 w-10 flex flex-row  justify-center items-center shadow-lg rounded-full focus:outline-none bg-yellow-400 hover:bg-yellow-300 duration-300"
 					onClick={() => closeModal()}
 				>
 					<FiX />
@@ -108,7 +108,12 @@ const CharacterPage = ({
 				<div className="char-info-qoute lg:mt-3">
 					<h1 className="font-semibold text-lg">Quotes</h1>
 					{loading ? (
-						" "
+						<div className="lds-ellipsis">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
 					) : (
 						<>
 							<ul className="mb-3">
@@ -120,7 +125,7 @@ const CharacterPage = ({
 								postPerPage={quoteOnPage}
 								totalPost={qoutes.length}
 								changePage={changePageHandler}
-								classes={"h-7 w-7 mx-2"}
+								classes={"h-7 w-7 mx-2 "}
 								type={"dots"}
 							/>
 						</>

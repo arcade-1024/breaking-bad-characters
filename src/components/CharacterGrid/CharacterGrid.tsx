@@ -4,6 +4,7 @@ import "./character-grid.css";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import CharacterPage from "../CharacterPage/CharacterPage";
 import Search from "../Search/Search";
+import Header from "../Header/Header";
 
 export interface CharacterGridComponent {
 	characterData: any;
@@ -35,6 +36,7 @@ const CharacterGrid = ({
 			) : (
 				""
 			)}
+			<Header />
 			<Search searchCharacter={searchHandler} />
 
 			{characterData.length === 0 ? (

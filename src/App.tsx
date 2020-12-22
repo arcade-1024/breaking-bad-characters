@@ -44,15 +44,17 @@ function App() {
 					searchHandler={searchHandler}
 				/>
 			)}
-			<Pagenation
-				postPerPage={postOnPage}
-				totalPost={character.length}
-				changePage={changePageHandler}
-				classes={
-					"h-10 w-10 mx-2 shadow-lg hover:bg-gray-400 hover:text-white hover:font-bold duration-300 focus:bg-gray-400"
-				}
-				type="number"
-			/>
+			<div className="pb-7 pt-3">
+				<Pagenation
+					postPerPage={postOnPage}
+					totalPost={character.length}
+					changePage={changePageHandler}
+					classes={
+						"h-10 w-10 mx-2 shadow-lg hover:bg-black hover:text-white hover:font-bold duration-300 focus:bg-gray-400 bg-white"
+					}
+					type="number"
+				/>
+			</div>
 		</div>
 	);
 }
