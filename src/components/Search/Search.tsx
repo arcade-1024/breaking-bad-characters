@@ -1,16 +1,24 @@
 import React, { useState, useRef } from "react";
 import { FiSearch, FiX } from "react-icons/fi";
+import "./search.css";
 export interface SearchComponent {
 	searchCharacter: Function;
 }
 const Search = ({ searchCharacter }: SearchComponent) => {
 	const inputRef = useRef<HTMLInputElement>(document.createElement("input"));
-	const onChangeHandler = () => {
-		console.log(inputRef.current?.value);
-		searchCharacter(inputRef.current?.value);
-	};
 	// eslint-disable-next-line
 	const [icon, setIcon] = useState(true);
+	const onChangeHandler = () => {
+		setIcon(false);
+		console.log(inputRef.current?.value);
+		searchCharacter(inputRef.current?.value);
+		if (inputRef.current.value === "") {
+			setIcon(true);
+		}
+	};
+	const clearInput = () => {
+		inputRef.current.value = "";
+	};
 	return (
 		<section className="flex flex-row justify-center">
 			<form className="w-2/4 relative">
@@ -21,8 +29,14 @@ const Search = ({ searchCharacter }: SearchComponent) => {
 					ref={inputRef}
 					onChange={onChangeHandler}
 				/>
-				<div className="absolute top-1/2 right-2 -translate-x-1/2">
-					{icon ? <FiSearch /> : <FiX />}
+				<div className="absolute top-1/2 right-2 input-icon">
+					{icon ? (
+						<FiSearch />
+					) : (
+						<button onClick={clearInput}>
+							<FiX />
+						</button>
+					)}
 				</div>
 			</form>
 		</section>
