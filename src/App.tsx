@@ -22,7 +22,6 @@ function App() {
 		};
 		fetchCharacter();
 	}, [query]);
-
 	//pagination
 	const lastPostIndex = currentPage * postOnPage;
 	const indexFirstPost = lastPostIndex - postOnPage;

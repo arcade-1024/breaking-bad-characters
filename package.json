@@ -26,6 +26,7 @@
   "scripts": {
     "build:tailwind": "tailwind build src/styles/tailwind.css -o src/styles/index.css",
     "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

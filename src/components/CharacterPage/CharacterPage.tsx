@@ -42,7 +42,7 @@ const CharacterPage = ({
 			setLoading(false);
 		};
 		fetchQoute();
-	}, []);
+	}, [charName]);
 	const lastQuoteIndex = currentPage * quoteOnPage;
 	const indexFirstQoute = lastQuoteIndex - quoteOnPage;
 	const currentQuote = qoutes.slice(indexFirstQoute, lastQuoteIndex);
