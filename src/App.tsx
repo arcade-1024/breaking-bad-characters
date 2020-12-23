@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CharacterGrid from "./components/CharacterGrid/CharacterGrid";
 import Pagenation from "./components/Pageination/Pagenation";
+import Loader from "./components/Loader/Loader";
 function App() {
 	const [character, setCharacter] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
@@ -16,7 +17,6 @@ function App() {
 			const result = await axios(
 				`https://www.breakingbadapi.com/api/characters?name=${query}`
 			);
-
 			setCharacter(result.data);
 			setLoading(false);
 		};
@@ -37,24 +37,26 @@ function App() {
 	return (
 		<div className="App overflow-hidden">
 			{loading ? (
-				"loading"
+				<Loader />
 			) : (
-				<CharacterGrid
-					characterData={currentPost}
-					searchHandler={searchHandler}
-				/>
+				<>
+					<CharacterGrid
+						characterData={currentPost}
+						searchHandler={searchHandler}
+					/>
+					<div className="pb-7 pt-3">
+						<Pagenation
+							postPerPage={postOnPage}
+							totalPost={character.length}
+							changePage={changePageHandler}
+							classes={
+								"lg:h-10 lg:w-10 lg:mx-2 shadow-lg hover:bg-black hover:text-white hover:font-bold duration-300 focus:bg-gray-400 bg-white"
+							}
+							type="number"
+						/>
+					</div>
+				</>
 			)}
-			<div className="pb-7 pt-3">
-				<Pagenation
-					postPerPage={postOnPage}
-					totalPost={character.length}
-					changePage={changePageHandler}
-					classes={
-						"lg:h-10 lg:w-10 lg:mx-2 shadow-lg hover:bg-black hover:text-white hover:font-bold duration-300 focus:bg-gray-400 bg-white"
-					}
-					type="number"
-				/>
-			</div>
 		</div>
 	);
 }

@@ -6,6 +6,7 @@ import CharacterPage from "../CharacterPage/CharacterPage";
 import Search from "../Search/Search";
 import Header from "../Header/Header";
 
+import noResImg from "../../assets/PngItem_2140858.png";
 export interface CharacterGridComponent {
 	characterData: any;
 	searchHandler: Function;
@@ -40,8 +41,9 @@ const CharacterGrid = ({
 			<Search searchCharacter={searchHandler} />
 
 			{characterData.length === 0 ? (
-				<div className="flex justify-center items-center text-3xl mt-8 text-black font-bold tracking-wider">
-					No Result Found
+				<div className="flex flex-col justify-center items-center text-3xl mt-4	 text-black font-bold tracking-wider">
+					<img className="h-28" src={noResImg} alt="" />
+					<p className="mt-3">No Result Found</p>
 				</div>
 			) : (
 				<>
