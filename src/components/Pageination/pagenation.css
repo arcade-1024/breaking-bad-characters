@@ -1,3 +1,17 @@
-.active{
-  background: #000;
+.active {
+	background: #000;
+}
+.page-number:hover > .dots-nav {
+	background: #000;
+	transition: all 0.4s;
+}
+@media (max-width: 500px) {
+	.page-number {
+		height: 30px;
+		width: 30px;
+		margin: 0 7px;
+	}
+	.pagination-nav {
+		margin-top: 20px;
+	}
 }

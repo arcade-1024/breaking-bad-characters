@@ -50,7 +50,7 @@ function App() {
 					totalPost={character.length}
 					changePage={changePageHandler}
 					classes={
-						"h-10 w-10 mx-2 shadow-lg hover:bg-black hover:text-white hover:font-bold duration-300 focus:bg-gray-400 bg-white"
+						"lg:h-10 lg:w-10 lg:mx-2 shadow-lg hover:bg-black hover:text-white hover:font-bold duration-300 focus:bg-gray-400 bg-white"
 					}
 					type="number"
 				/>

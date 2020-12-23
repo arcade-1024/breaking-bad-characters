@@ -40,7 +40,7 @@ const CharacterGrid = ({
 			<Search searchCharacter={searchHandler} />
 
 			{characterData.length === 0 ? (
-				<div className="flex justify-center items-center text-3xl mt-8 text-gray-400 font-bold tracking-wider">
+				<div className="flex justify-center items-center text-3xl mt-8 text-black font-bold tracking-wider">
 					No Result Found
 				</div>
 			) : (
